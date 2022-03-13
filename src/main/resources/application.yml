@@ -4,3 +4,26 @@ server:
     context-path: /purviewAPI
 
 
+mybatis-plus:
+  mapper-locations: classpath:mapper/*.xml
+  type-aliases-package: com.silence.purview.entity
+  configuration:
+    map-underscore-to-camel-case: true
+
+logging:
+  level:
+    com.silence.purview.mapper: DEBUG
+
+
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://192.168.31.121:3306/DB_Purview?useUnicode=true&characterEncoding=utf8
+    username: root
+    password: 123456
+    type: com.alibaba.druid.pool.DruidDataSource
+
+token:
+  privateKey: 'abcdefgabcdefg12'
+  updateTime: 3600000
+  tokenTimeout: 7200000
